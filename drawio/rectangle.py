@@ -4,7 +4,7 @@ from .element import Element
 
 class Rectangle(Element):
     def __init__(self, x: int, y: int, width: int, height: int, border_width: int = 1, arc_size: int = 5,
-                 content: str = "", text_align: str = "center", text_valign: str = "middle", rounded: bool = False):
+                 content: str = "", text_align: str = "center", text_valign: str = "middle", rounded: bool = False, font_size: int=10):
         super().__init__()
         self.border_width = border_width
         self.x = x
@@ -16,13 +16,13 @@ class Rectangle(Element):
         self.content: str = content
         self.text_align: str = text_align
         self.text_valign: str = text_valign
+        self.font_size = font_size
 
     def to_xml(self):
-        # TODO deal with None id
         cell = XmlElement("mxCell", attrib={
             "id": str(self.id),
             "value": self.content,
-            "style": f"rounded={1 if self.rounded else 0};whiteSpace=wrap;html=1;arcSize={self.arc_size};align={self.text_align};verticalAlign={self.text_valign};",
+            "style": f"rounded={1 if self.rounded else 0};whiteSpace=wrap;html=1;arcSize={self.arc_size};align={self.text_align};verticalAlign={self.text_valign};;fontSize={self.font_size};",
             "vertex": str(self.border_width),
             "parent": "1",
         })

@@ -13,4 +13,8 @@ class Constants:
     END_TASK = "endTask"
     SWITCH_TASK = "switch"
     DECISION_TASK = "decision"
+    CONDITION_TASK = "condition"
+    CONDITION_EXP_TASK = "exp"
+    EVALUATEGROUP_TASK = "evaluateScheduleGroup"
     TRANSFERTOACD_TASK = "transferToAcd"
+    OUTPUTS_DECISION_TASK = "outputs"
